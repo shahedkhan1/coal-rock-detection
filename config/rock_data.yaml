@@ -1,0 +1,12 @@
+path: ../data/rock_dataset
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 2
+names: ['rock', 'coal']
+
+# Dataset notes
+# Source: Roboflow Universe — rock-detection-jmmkp v3
+# Images: conveyor belt industrial footage
+# Labels: YOLO format (cx cy w h normalised)

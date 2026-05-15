@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" width="680">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+    .box-label  { font-size: 12px; font-weight: 600; }
+    .box-sub    { font-size: 10px; font-weight: 400; }
+  </style>
+
+  <!-- Video Input -->
+  <rect x="10" y="70" width="100" height="60" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1"/>
+  <text class="box-label" x="60" y="94" text-anchor="middle" fill="#1E40AF">Video input</text>
+  <text class="box-sub"   x="60" y="110" text-anchor="middle" fill="#3B82F6">.mp4 / webcam</text>
+  <text class="box-sub"   x="60" y="122" text-anchor="middle" fill="#3B82F6">cv2.VideoCapture</text>
+
+  <line x1="112" y1="100" x2="128" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Frame Extraction -->
+  <rect x="130" y="70" width="100" height="60" rx="8" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1"/>
+  <text class="box-label" x="180" y="94" text-anchor="middle" fill="#374151">Frame split</text>
+  <text class="box-sub"   x="180" y="110" text-anchor="middle" fill="#6B7280">640 × 640 resize</text>
+  <text class="box-sub"   x="180" y="122" text-anchor="middle" fill="#6B7280">BGR → tensor</text>
+
+  <line x1="232" y1="100" x2="248" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- YOLOv7 -->
+  <rect x="250" y="40" width="180" height="120" rx="8" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.5"/>
+  <text class="box-label" x="340" y="64" text-anchor="middle" fill="#5B21B6">YOLOv7</text>
+
+  <rect x="264" y="74" width="152" height="24" rx="4" fill="#DDD6FE" stroke="#A78BFA" stroke-width="0.8"/>
+  <text class="box-sub" x="340" y="87" text-anchor="middle" fill="#5B21B6">E-ELAN backbone (CSP)</text>
+
+  <rect x="264" y="102" width="152" height="24" rx="4" fill="#DDD6FE" stroke="#A78BFA" stroke-width="0.8"/>
+  <text class="box-sub" x="340" y="115" text-anchor="middle" fill="#5B21B6">PANet neck</text>
+
+  <rect x="264" y="130" width="152" height="20" rx="4" fill="#DDD6FE" stroke="#A78BFA" stroke-width="0.8"/>
+  <text class="box-sub" x="340" y="143" text-anchor="middle" fill="#5B21B6">Detection head (P3 / P4 / P5)</text>
+
+  <line x1="432" y1="100" x2="448" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- NMS -->
+  <rect x="450" y="70" width="90" height="60" rx="8" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1"/>
+  <text class="box-label" x="495" y="94" text-anchor="middle" fill="#92400E">NMS filter</text>
+  <text class="box-sub"   x="495" y="110" text-anchor="middle" fill="#B45309">conf ≥ 0.25</text>
+  <text class="box-sub"   x="495" y="122" text-anchor="middle" fill="#B45309">IoU ≤ 0.45</text>
+
+  <line x1="542" y1="100" x2="558" y2="100" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Output -->
+  <rect x="560" y="70" width="108" height="60" rx="8" fill="#D1FAE5" stroke="#6EE7B7" stroke-width="1"/>
+  <text class="box-label" x="614" y="90" text-anchor="middle" fill="#065F46">Output video</text>
+  <text class="box-sub"   x="614" y="106" text-anchor="middle" fill="#059669">boxes + labels</text>
+  <text class="box-sub"   x="614" y="118" text-anchor="middle" fill="#059669">conf + FPS overlay</text>
+
+  <!-- Class labels below -->
+  <text style="font-family:ui-sans-serif;font-size:10px;fill:#9CA3AF" x="340" y="180" text-anchor="middle">Classes: rock · coal     Training: IMSz 640 · Epochs 50 · Pretrained on COCO</text>
+</svg>
