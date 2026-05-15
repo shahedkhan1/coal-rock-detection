@@ -10,7 +10,7 @@ Built during my time doing ML engineering work on industrial computer vision sys
 
 ## Pipeline
 
-![Architecture](architecture.svg)
+![Architecture](rock-detection-architecture.svg)
 
 ---
 
